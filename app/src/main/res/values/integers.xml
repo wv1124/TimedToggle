@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="wakelock_normal_ms">2000</integer>
+    <integer name="wakelock_long_ms">6000</integer>
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/listTaskViewer"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="9.0dip"
+    android:paddingLeft="8.0dip"
+    android:paddingRight="18.0dip"
+    android:paddingTop="9.0dip">
+
+    <CheckBox
+        android:id="@id/checkSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="3.0dip"
+        android:paddingRight="9.0dip"
+        android:text="" />
+
+    <TextView
+        android:id="@id/task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/checkSelect"
+        android:textIsSelectable="false"
+        android:textSize="20.0sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@id/task_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@id/task_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@id/times"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="@id/times"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/task"
+        android:layout_below="@id/task"
+        android:paddingRight="3.0dip"
+        android:tag="day_1"
+        android:text="@string/short_day_sunday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_1"
+        android:paddingRight="3.0dip"
+        android:tag="day_2"
+        android:text="@string/short_day_monday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_2"
+        android:paddingRight="3.0dip"
+        android:tag="day_3"
+        android:text="@string/short_day_tuesday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_3"
+        android:paddingRight="3.0dip"
+        android:tag="day_4"
+        android:text="@string/short_day_wednesday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_4"
+        android:paddingRight="3.0dip"
+        android:tag="day_5"
+        android:text="@string/short_day_thursday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_5"
+        android:paddingRight="3.0dip"
+        android:tag="day_6"
+        android:text="@string/short_day_friday"
+        android:textSize="15.0sp" />
+
+    <TextView
+        android:id="@id/day_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/task"
+        android:layout_toRightOf="@id/day_6"
+        android:tag="day_7"
+        android:text="@string/short_day_saturday"
+        android:textSize="15.0sp" />
+
+    <ImageView
+        android:id="@id/image_paused"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@id/times"
+        android:layout_below="@id/times"
+        android:contentDescription="@string/label_task_paused"
+        android:src="@drawable/av_pause"
+        android:visibility="invisible" />
+</RelativeLayout>

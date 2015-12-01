@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="package_name">uk.co.ergodicity.timedtoggles</string>
+    <string name="app_name">Timed Toggles</string>
+    <string name="action_settings">设置</string>
+    <string name="action_about">关于</string>
+    <string name="short_day_sunday">周日</string>
+    <string name="short_day_monday">周一</string>
+    <string name="short_day_tuesday">周二</string>
+    <string name="short_day_wednesday">周三</string>
+    <string name="short_day_thursday">周四</string>
+    <string name="short_day_friday">周五</string>
+    <string name="short_day_saturday">周六</string>
+    <string name="title_activity_edit_task">编辑任务</string>
+    <string name="title_confirm_delete">删除任务？</string>
+    <string name="title_confirm_single_delete">删除此项任务？</string>
+    <string name="body_confirm_delete">你确认你想要删除所选任务？</string>
+    <string name="body_confirm_single_delete">你确认你想要删除此项任务？</string>
+    <string name="title_confirm_aeroplane_mode">在飞机上？</string>
+    <string name="body_confirm_aeroplane_mode">开启飞行模式并禁用任何飞行有关的任务，以阻止在飞行时意外开启。飞行结束后请再次点击。</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="ok">好</string>
+    <string name="set">设置</string>
+    <string name="cancel">取消</string>
+    <string name="label_last_run">上次运行</string>
+    <string name="label_time_to_run">要运行的时间</string>
+    <string name="label_days_to_run">要运行的日期</string>
+    <string name="label_task_to_run">要运行的任务</string>
+    <string name="label_vibrate_on_task_run">当任务运行时震动</string>
+    <string name="label_toast_on_task_run">显示弹出提醒</string>
+    <string name="label_wakelock_longer">允许额外的时间来切换</string>
+    <string name="label_immediate_flightmode">无确认</string>
+    <string name="label_theme_use_dark">使用暗色主题</string>
+    <string name="summary_theme_use_dark">选中此选项来切换至暗色主题</string>
+    <string name="summary_wakelock_longer">如果某些切换不可靠选中此选项，或仅当你下次打开手机进行切换</string>
+    <string name="summary_toast_on_task_run">当任务运行时手机在打开，一条弹出提醒将短暂地显示</string>
+    <string name="summary_vibrate_on_task_run">通过震动设备让你知道任务正在运行</string>
+    <string name="summary_immediate_flightmode">飞行模式切换不会要求确认立刻运行</string>
+    <string name="action_new">新任务</string>
+    <string name="action_new_condensed">新</string>
+    <string name="action_aeroplane_mode">飞行模式</string>
+    <string name="action_delete_task">删除任务</string>
+    <string name="action_play_task">启用所选任务</string>
+    <string name="action_pause_task">暂停所选任务</string>
+    <string name="label_task_paused">任务已暂停</string>
+    <string name="label_placeholder">Placeholder</string>
+    <string name="toast_processing">Timed Toggles 现在正处理计划任务。</string>
+    <string name="toast_tasks_deleted">所选任务已删除。</string>
+    <string name="toast_task_deleted">任务已经删除。</string>
+    <string name="label_set_the_task">设置任务</string>
+    <string name="label_set_time">设置时间</string>
+    <string name="label_to_unpause">"目前该任务暂停并不会切换。要继续请点击'播放'图标。"</string>
+    <string name="label_days_run_dialog">要运行的日期</string>
+    <string name="toast_tasks_reenabled">飞机任务现在启用，如果飞行模式已打开，现在将关闭。</string>
+    <string name="toast_incomplete_task">新任务需要一个或多个设置来完成。</string>
+    <string name="task_not_run">尚未执行</string>
+    <string name="task_run_display_format">{0} {1}</string>
+    <string name="pref_no_alert_set">无</string>
+    <string name="pref_alert_unknown">未知</string>
+    <string name="label_task_postponed">任务已被推迟</string>
+    <string name="label_postponed_info">"因设备正在使用中此任务已被推迟。当该设备不再使用，而且如果此任务没有被取代，它将运行。如果您不希望当设备使用中而推迟任务，在设置菜单选项取消选中'若在使用中将推迟'。"</string>
+    <string name="dialog_title_upgraded">升级到新版本</string>
+    <string name="dialog_message_upgraded">"最新消息：修复支持Android5.0的蓝牙，数据和飞机进行切换。
+
+Timed Toggles 已经升级可能导致停止定时切换工作的问题。
+
+现在该应用已启动并重置开关至此新版本。如果需要请重新授权root权限。
+
+以后每当 Timed Toggles 升级，请总是至少运行它一次。"</string>
+    <string name="dialog_close">关闭</string>
+    <string name="dialog_title_welcome">欢迎来到 Timed Toggles</string>
+    <string name="dialog_message_welcome">"欢迎来到 Timed Toggles. 如果该设备是植根，请到设置，并勾选根植设备选项，并授予，以使更多的切换完全权限。 上手请单击加号图标添加你的第一个定时切换。
+
+请注意，由于谷歌的限制，飞机模式切换在运行Android4.2或更高版本的设备上要求已经被root。
+
+有时 Timed Toggles 将会通过Play商店升级，如果你被提醒该应用程序已升级，如果需要重新申请root权限，请至少运行它一次以确保升级完成。"</string>
+    <string name="dialog_title_about">关于 Timed Toggles</string>
+    <string name="dialog_message_about">Timed Toggles 版本 %VERSION%</string>
+    <string name="dialog_title_restored">设置还原</string>
+    <string name="dialog_message_restored">先前的设置已从此设备的备份中自动还原。</string>
+    <string name="label_settings">设置</string>
+    <string name="label_notifications">通知</string>
+    <string name="label_playsound">当任务运行时播放声音</string>
+    <string name="summary_postpone">如果该设备正在使用中（在通话中或屏幕​​已点亮），关闭东西类任务会被推迟，以避免干扰。</string>
+    <string name="label_postpone">若在使用中将推迟</string>
+    <string name="label_flightmode_kitkat">兼容模式</string>
+    <string name="summary_flightmode_kitkat">运行Android5.0的一些设备可能需要此设置。试试这个选项，如果飞机上的开关不起作用。</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/label_notifications">
+        <CheckBoxPreference android:title="@string/label_vibrate_on_task_run" android:key="vibrate_on_task_run" android:summary="@string/summary_vibrate_on_task_run" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/label_toast_on_task_run" android:key="toast_on_task_run" android:summary="@string/summary_toast_on_task_run" android:defaultValue="true" />
+        <RingtonePreference android:title="@string/label_playsound" android:key="notification_sound" android:ringtoneType="notification" android:showDefault="true" android:showSilent="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/label_settings" android:key="compat">
+        <CheckBoxPreference android:title="@string/label_rooted" android:key="rooted_device" android:summary="@string/summary_rooted" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/label_flightmode_kitkat" android:key="flightmode_kitkat" android:summary="@string/summary_flightmode_kitkat" android:dependency="rooted_device" android:defaultValue="false" android:disableDependentsState="true" />
+        <CheckBoxPreference android:title="@string/label_postpone" android:key="postpone" android:summary="@string/summary_postpone" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/label_wakelock_longer" android:key="wakelock_longer" android:summary="@string/summary_wakelock_longer" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/label_immediate_flightmode" android:key="immediate_flightmode_noconfirm" android:summary="@string/summary_immediate_flightmode" android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>

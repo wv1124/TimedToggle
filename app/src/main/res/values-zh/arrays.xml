@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="days">
+        <item>周日</item>
+        <item>周一</item>
+        <item>周二</item>
+        <item>周三</item>
+        <item>周四</item>
+        <item>周五</item>
+        <item>周六</item>
+    </string-array>
+    <string-array name="tasks">
+        <item>打开飞行模式</item>
+        <item>关闭飞行模式</item>
+        <item>打开自动同步</item>
+        <item>关闭自动同步</item>
+        <item>打开蓝牙</item>
+        <item>关闭蓝牙</item>
+        <item>打开数据连接</item>
+        <item>关闭数据连接</item>
+        <item>关闭设备电源</item>
+        <item>重启设备</item>
+        <item>自动屏幕亮度</item>
+        <item>手动屏幕亮度</item>
+        <item>屏幕亮度等级</item>
+        <item>打开声音</item>
+        <item>关闭声音</item>
+        <item>声音大小等级</item>
+        <item>打开Wi-Fi</item>
+        <item>关闭Wi-Fi</item>
+        <item>打开震动</item>
+        <item>关闭震动</item>
+    </string-array>
+</resources>
