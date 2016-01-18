@@ -4,6 +4,8 @@
     <string name="app_name">Timed Toggles</string>
     <string name="action_settings">设置</string>
     <string name="action_about">关于</string>
+    <string name="action_add">添加</string>
+    <string name="action_airplane">飞行模式</string>
     <string name="short_day_sunday">周日</string>
     <string name="short_day_monday">周一</string>
     <string name="short_day_tuesday">周二</string>

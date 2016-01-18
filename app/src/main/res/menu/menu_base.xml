@@ -4,18 +4,6 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/action_add"
-        android:icon="@drawable/content_new"
-        android:orderInCategory="100"
-        app:showAsAction="always"/>
-
-    <item
-        android:id="@+id/action_airplane"
-        android:orderInCategory="101"
-        android:icon="@drawable/alerts_and_states_airplane_mode_on"
-        app:showAsAction="always"/>
-
-    <item
         android:id="@+id/action_settings"
         android:orderInCategory="102"
         android:title="@string/action_settings"
