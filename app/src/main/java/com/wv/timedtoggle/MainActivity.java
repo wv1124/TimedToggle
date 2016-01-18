@@ -1,5 +1,7 @@
 package com.wv.timedtoggle;
 
+import android.content.Intent;
+import android.support.annotation.MainThread;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -30,6 +32,9 @@ public class MainActivity extends BaseActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_add) {
+            Intent intent = new Intent(MainActivity.this, AddEditTaskActivity.class);
+            this.startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
