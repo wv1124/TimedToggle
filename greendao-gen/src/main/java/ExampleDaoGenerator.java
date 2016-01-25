@@ -25,12 +25,12 @@ public class ExampleDaoGenerator {
 
 
     private static void addTask(Schema schema) {
-        Entity note = schema.addEntity("Task");
+        Entity note = schema.addEntity("TaskBean");
         note.addIdProperty().autoincrement();
         note.addStringProperty("task").notNull();
         note.addStringProperty("date").notNull();
         note.addStringProperty("time").notNull();
-        note.addStringProperty("enable").notNull();
+        note.addBooleanProperty("enable").notNull();
     }
 
 }

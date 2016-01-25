@@ -1,27 +1,31 @@
 package com.wv.timedtoggle;
 
+import android.app.ActionBar;
 import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.wv.timedtoggle.database.DaoMaster;
+import com.wv.timedtoggle.database.DaoSession;
+import com.wv.timedtoggle.database.TaskBean;
+
 import java.util.Calendar;
 
 public class AddEditTaskActivity extends BaseActivity implements View.OnClickListener {
 
     private LinearLayout layoutTime;
     private RelativeLayout layoutDays;
+    private SeekBar seekBar;
     private TextView textTime;
     private TextView day1;
     private TextView day2;
@@ -35,7 +39,8 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
     private int mHour = 0;
     private int mMinute = 0;
     private Boolean[] selectDays = null;
-
+    private Menu mMenu = null;
+    private TaskBean mTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +60,18 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
                 (TextView) this.findViewById(R.id.day_6),
                 (TextView) this.findViewById(R.id.day_7)
         };
+        seekBar = (SeekBar) this.findViewById(R.id.seekBar);
+
+        mTask = new TaskBean();
+
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        myToolbar.setTitle("New Task");
+        setSupportActionBar(myToolbar);
+
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeButtonEnabled(true);
+
     }
 
     @Override
@@ -86,7 +103,7 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
     }
 
     private void showDatePicker() {
-        selectDays = new Boolean[] {false, false, false, false, false, false, false};
+        selectDays = new Boolean[]{false, false, false, false, false, false, false};
         //String[] days = this.getResources().getStringArray(R.array.days);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.drawable.ic_launcher);
@@ -125,7 +142,8 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.edit_task, menu);
+        mMenu = menu;
         return true;
     }
 
@@ -139,8 +157,29 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        } else if (id == R.id.action_edit_pause) {
+            MenuItem playMenu = mMenu.findItem(R.id.action_edit_play);
+            playMenu.setVisible(true);
+            item.setVisible(false);
+            mTask.setEnable(false);
+        } else if (id == R.id.action_edit_play) {
+            MenuItem playMenu = mMenu.findItem(R.id.action_edit_pause);
+            playMenu.setVisible(true);
+            item.setVisible(false);
+            mTask.setEnable(true);
+        } else if (id == android.R.id.home){
+            this.finish();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // 保存task到数据库;
+        DaoMaster daoMaster = new DaoMaster(App.getInstance().getDb());
+        DaoSession daoSession = daoMaster.newSession();
+        daoSession.getTaskBeanDao().insert(mTask);
     }
 }
