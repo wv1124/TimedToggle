@@ -1,19 +1,28 @@
 package com.wv.timedtoggle;
 
 import android.content.Intent;
-import android.support.annotation.MainThread;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends BaseActivity {
+import com.wv.timedtoggle.adapter.CommonAdapter;
+import com.wv.timedtoggle.adapter.ViewHolder;
+import com.wv.timedtoggle.database.DaoMaster;
+import com.wv.timedtoggle.database.DaoSession;
+import com.wv.timedtoggle.database.ScheduleBean;
+
+import java.util.List;
+
+public class MyTaskActivity extends BaseActivity {
+
+    private CommonAdapter mAdapter;
+    private List<ScheduleBean> mDatas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.my_task_list);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -37,10 +46,25 @@ public class MainActivity extends BaseActivity {
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_add) {
-            Intent intent = new Intent(MainActivity.this, AddEditTaskActivity.class);
+            Intent intent = new Intent(MyTaskActivity.this, AddEditTaskActivity.class);
             this.startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void getData() {
+        DaoMaster daoMaster = new DaoMaster(App.getInstance().getDb());
+        DaoSession daoSession = daoMaster.newSession();
+        mDatas = daoSession.loadAll(ScheduleBean.class);
+        mAdapter = new CommonAdapter<ScheduleBean>(this.getApplicationContext(),
+                mDatas, R.layout.my_task_list_item) {
+            @Override
+            public void convert(ViewHolder viewHolder, ScheduleBean item) {
+                viewHolder.setChecked(R.id.checkSelect, item.getEnable());
+                viewHolder.setText(R.id.task, item.getTask());
+                String dates = item.getDate();
+            }
+        };
     }
 }

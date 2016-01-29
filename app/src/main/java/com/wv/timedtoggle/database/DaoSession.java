@@ -20,26 +20,26 @@ public class DaoSession extends AbstractDaoSession {
 
     private final DaoConfig taskBeanDaoConfig;
 
-    private final TaskBeanDao taskBeanDao;
+    private final ScheduleBeanDao scheduleBeanDao;
 
     public DaoSession(SQLiteDatabase db, IdentityScopeType type, Map<Class<? extends AbstractDao<?, ?>>, DaoConfig>
             daoConfigMap) {
         super(db);
 
-        taskBeanDaoConfig = daoConfigMap.get(TaskBeanDao.class).clone();
+        taskBeanDaoConfig = daoConfigMap.get(ScheduleBeanDao.class).clone();
         taskBeanDaoConfig.initIdentityScope(type);
 
-        taskBeanDao = new TaskBeanDao(taskBeanDaoConfig, this);
+        scheduleBeanDao = new ScheduleBeanDao(taskBeanDaoConfig, this);
 
-        registerDao(TaskBean.class, taskBeanDao);
+        registerDao(ScheduleBean.class, scheduleBeanDao);
     }
     
     public void clear() {
         taskBeanDaoConfig.getIdentityScope().clear();
     }
 
-    public TaskBeanDao getTaskBeanDao() {
-        return taskBeanDao;
+    public ScheduleBeanDao getScheduleBeanDao() {
+        return scheduleBeanDao;
     }
 
 }

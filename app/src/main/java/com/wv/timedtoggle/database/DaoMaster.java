@@ -18,12 +18,12 @@ public class DaoMaster extends AbstractDaoMaster {
 
     /** Creates underlying database table using DAOs. */
     public static void createAllTables(SQLiteDatabase db, boolean ifNotExists) {
-        TaskBeanDao.createTable(db, ifNotExists);
+        ScheduleBeanDao.createTable(db, ifNotExists);
     }
     
     /** Drops underlying database table using DAOs. */
     public static void dropAllTables(SQLiteDatabase db, boolean ifExists) {
-        TaskBeanDao.dropTable(db, ifExists);
+        ScheduleBeanDao.dropTable(db, ifExists);
     }
     
     public static abstract class OpenHelper extends SQLiteOpenHelper {
@@ -55,7 +55,7 @@ public class DaoMaster extends AbstractDaoMaster {
 
     public DaoMaster(SQLiteDatabase db) {
         super(db, SCHEMA_VERSION);
-        registerDaoClass(TaskBeanDao.class);
+        registerDaoClass(ScheduleBeanDao.class);
     }
     
     public DaoSession newSession() {

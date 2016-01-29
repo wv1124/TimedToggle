@@ -4,7 +4,7 @@ package com.wv.timedtoggle.database;
 /**
  * Entity mapped to table "TASK_BEAN".
  */
-public class TaskBean {
+public class ScheduleBean {
 
     private Long id;
     /** Not-null value. */
@@ -15,14 +15,14 @@ public class TaskBean {
     private String time;
     private boolean enable;
 
-    public TaskBean() {
+    public ScheduleBean() {
     }
 
-    public TaskBean(Long id) {
+    public ScheduleBean(Long id) {
         this.id = id;
     }
 
-    public TaskBean(Long id, String task, String date, String time, boolean enable) {
+    public ScheduleBean(Long id, String task, String date, String time, boolean enable) {
         this.id = id;
         this.task = task;
         this.date = date;

@@ -1,6 +1,5 @@
 package com.wv.timedtoggle;
 
-import android.app.ActionBar;
 import android.app.AlertDialog;
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
@@ -17,7 +16,7 @@ import android.widget.TimePicker;
 
 import com.wv.timedtoggle.database.DaoMaster;
 import com.wv.timedtoggle.database.DaoSession;
-import com.wv.timedtoggle.database.TaskBean;
+import com.wv.timedtoggle.database.ScheduleBean;
 
 import java.util.Calendar;
 
@@ -40,7 +39,7 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
     private int mMinute = 0;
     private Boolean[] selectDays = null;
     private Menu mMenu = null;
-    private TaskBean mTask;
+    private ScheduleBean mTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +61,7 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
         };
         seekBar = (SeekBar) this.findViewById(R.id.seekBar);
 
-        mTask = new TaskBean();
+        mTask = new ScheduleBean();
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         myToolbar.setTitle("New Task");
@@ -180,6 +179,6 @@ public class AddEditTaskActivity extends BaseActivity implements View.OnClickLis
         // 保存task到数据库;
         DaoMaster daoMaster = new DaoMaster(App.getInstance().getDb());
         DaoSession daoSession = daoMaster.newSession();
-        daoSession.getTaskBeanDao().insert(mTask);
+        daoSession.getScheduleBeanDao().insert(mTask);
     }
 }

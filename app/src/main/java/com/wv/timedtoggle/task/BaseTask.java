@@ -5,6 +5,8 @@ package com.wv.timedtoggle.task;
  */
 public class BaseTask implements Task {
 
+    public String name;
+
     @Override
     public void execute() {
 

@@ -12,12 +12,12 @@ import de.greenrobot.dao.internal.DaoConfig;
 /** 
  * DAO for table "TASK_BEAN".
 */
-public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
+public class ScheduleBeanDao extends AbstractDao<ScheduleBean, Long> {
 
     public static final String TABLENAME = "TASK_BEAN";
 
     /**
-     * Properties of entity TaskBean.<br/>
+     * Properties of entity ScheduleBean.<br/>
      * Can be used for QueryBuilder and for referencing column names.
     */
     public static class Properties {
@@ -29,11 +29,11 @@ public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
     };
 
 
-    public TaskBeanDao(DaoConfig config) {
+    public ScheduleBeanDao(DaoConfig config) {
         super(config);
     }
     
-    public TaskBeanDao(DaoConfig config, DaoSession daoSession) {
+    public ScheduleBeanDao(DaoConfig config, DaoSession daoSession) {
         super(config, daoSession);
     }
 
@@ -56,7 +56,7 @@ public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
 
     /** @inheritdoc */
     @Override
-    protected void bindValues(SQLiteStatement stmt, TaskBean entity) {
+    protected void bindValues(SQLiteStatement stmt, ScheduleBean entity) {
         stmt.clearBindings();
  
         Long id = entity.getId();
@@ -77,8 +77,8 @@ public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
 
     /** @inheritdoc */
     @Override
-    public TaskBean readEntity(Cursor cursor, int offset) {
-        TaskBean entity = new TaskBean( //
+    public ScheduleBean readEntity(Cursor cursor, int offset) {
+        ScheduleBean entity = new ScheduleBean( //
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.getString(offset + 1), // task
             cursor.getString(offset + 2), // date
@@ -90,7 +90,7 @@ public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
      
     /** @inheritdoc */
     @Override
-    public void readEntity(Cursor cursor, TaskBean entity, int offset) {
+    public void readEntity(Cursor cursor, ScheduleBean entity, int offset) {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setTask(cursor.getString(offset + 1));
         entity.setDate(cursor.getString(offset + 2));
@@ -100,14 +100,14 @@ public class TaskBeanDao extends AbstractDao<TaskBean, Long> {
     
     /** @inheritdoc */
     @Override
-    protected Long updateKeyAfterInsert(TaskBean entity, long rowId) {
+    protected Long updateKeyAfterInsert(ScheduleBean entity, long rowId) {
         entity.setId(rowId);
         return rowId;
     }
     
     /** @inheritdoc */
     @Override
-    public Long getKey(TaskBean entity) {
+    public Long getKey(ScheduleBean entity) {
         if(entity != null) {
             return entity.getId();
         } else {
